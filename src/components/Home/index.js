@@ -89,7 +89,8 @@ export default function Home() {
 
 	console.log(pushWork)
 	}
-	const updateWork = async (e) => {		
+	const updateWork = async (e) => {
+		if(pushWork == true){	
 		e.preventDefault();				
 		const workValue = tempWorkStorage;
 		let newStorageValue = {};
@@ -107,6 +108,7 @@ export default function Home() {
 		})
 		await setWorkStorage(newStorageValue);
 		await setTempWorkStorage({ metry: "", čas: "" });
+	}
 	};
 
 	const switchTab = (e, newValue) => {
